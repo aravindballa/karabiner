@@ -31,7 +31,7 @@ export function createHyperSubLayer(
       description: `Toggle Hyper sublayer ${sublayer_key}`,
       type: "basic",
       from: {
-        key_code: getColemakKey(sublayer_key),
+        key_code: sublayer_key,
         modifiers: {
           optional: ["any"],
         },
@@ -108,7 +108,9 @@ export function createHyperSubLayers(subLayers: {
 }): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
-  ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
+  ).map((sublayer_key) =>
+    generateSubLayerVariableName(getColemakKey(sublayer_key))
+  );
 
   return Object.entries(subLayers).map(([key, value]) =>
     "to" in value
@@ -151,8 +153,7 @@ export function createHyperSubLayers(subLayers: {
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
-  const keyName = getColemakKey(key);
-  return `hyper_sublayer_${keyName}`;
+  return `hyper_sublayer_${key}`;
 }
 
 /**
