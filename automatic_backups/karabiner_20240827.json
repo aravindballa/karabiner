@@ -78,7 +78,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_o",
                     "value": 0
                   },
                   {
@@ -97,7 +97,7 @@
                 "description": "Open https://twitter.com",
                 "type": "basic",
                 "from": {
-                  "key_code": "f",
+                  "key_code": "t",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -121,7 +121,7 @@
                 "description": "Open https://news.ycombinator.com",
                 "type": "basic",
                 "from": {
-                  "key_code": "o",
+                  "key_code": "y",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -145,7 +145,7 @@
                 "description": "Open https://reddit.com",
                 "type": "basic",
                 "from": {
-                  "key_code": "s",
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -166,10 +166,10 @@
             "description": "Hyper Key sublayer \"o\"",
             "manipulators": [
               {
-                "description": "Toggle Hyper sublayer semicolon",
+                "description": "Toggle Hyper sublayer o",
                 "type": "basic",
                 "from": {
-                  "key_code": "p",
+                  "key_code": "o",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -179,7 +179,7 @@
                 "to_after_key_up": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_p",
+                      "name": "hyper_sublayer_o",
                       "value": 0
                     }
                   }
@@ -187,7 +187,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_p",
+                      "name": "hyper_sublayer_o",
                       "value": 1
                     }
                   }
@@ -196,11 +196,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
                     "value": 0
                   },
                   {
@@ -229,7 +224,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -253,7 +248,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -267,7 +262,7 @@
                 "description": "Open -a 'Slack.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "d",
+                  "key_code": "s",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -277,7 +272,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -291,7 +286,7 @@
                 "description": "Open -a 'Warp.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "f",
+                  "key_code": "t",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -301,7 +296,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -325,7 +320,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -339,7 +334,7 @@
                 "description": "Open -a 'Finder.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "e",
+                  "key_code": "f",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -349,7 +344,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -363,7 +358,7 @@
                 "description": "Open -a 'Spotify.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "r",
+                  "key_code": "p",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -373,7 +368,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -397,7 +392,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_p",
+                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]

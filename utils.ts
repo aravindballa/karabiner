@@ -31,7 +31,7 @@ export function createHyperSubLayer(
       description: `Toggle Hyper sublayer ${sublayer_key}`,
       type: "basic",
       from: {
-        key_code: sublayer_key,
+        key_code: getColemakKey(sublayer_key),
         modifiers: {
           optional: ["any"],
         },
@@ -80,7 +80,7 @@ export function createHyperSubLayer(
         ...commands[command_key],
         type: "basic" as const,
         from: {
-          key_code: command_key,
+          key_code: getColemakKey(command_key),
           modifiers: {
             optional: ["any"],
           },
@@ -119,7 +119,7 @@ export function createHyperSubLayers(subLayers: {
               ...value,
               type: "basic" as const,
               from: {
-                key_code: key as KeyCode,
+                key_code: getColemakKey(key as KeyCode),
                 modifiers: {
                   optional: ["any"],
                 },
@@ -142,7 +142,7 @@ export function createHyperSubLayers(subLayers: {
       : {
           description: `Hyper Key sublayer "${key}"`,
           manipulators: createHyperSubLayer(
-            key as KeyCode,
+            getColemakKey(key as KeyCode),
             value,
             allSubLayerVariables
           ),
@@ -151,7 +151,8 @@ export function createHyperSubLayers(subLayers: {
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
-  return `hyper_sublayer_${key}`;
+  const keyName = getColemakKey(key);
+  return `hyper_sublayer_${keyName}`;
 }
 
 /**
@@ -210,4 +211,56 @@ export function rectangle(name: string): LayerCommand {
  */
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
+}
+
+export function getColemakKey(key: KeyCode): KeyCode {
+  switch (key) {
+    // Row 1
+    case "f":
+      return "e";
+    case "p":
+      return "r";
+    case "g":
+      return "t";
+    case "j":
+      return "y";
+    case "l":
+      return "u";
+    case "u":
+      return "i";
+    case "y":
+      return "o";
+    case "semicolon":
+      return "p";
+
+    // Row 2
+    case "r":
+      return "s";
+    case "s":
+      return "d";
+    case "t":
+      return "f";
+    case "d":
+      return "g";
+    case "h":
+      return "h";
+    case "n":
+      return "j";
+    case "e":
+      return "k";
+    case "i":
+      return "l";
+    case "o":
+      return "semicolon";
+
+    // Row 3
+    case "k":
+      return "n";
+    case "m":
+      return "m";
+
+    // If the key is not mapped, return the original key
+    default:
+      return key;
+  }
 }
