@@ -58,8 +58,8 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
     // b = "B"rowse
     b: {
-      t: open("https://twitter.com"),
-      y: open("https://news.ycombinator.com"),
+      t: open("https://x.com/compose/post"),
+      y: open("https://youtube.com"),
       r: open("https://reddit.com"),
     },
     // o = "Open" applications
