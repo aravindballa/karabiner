@@ -1,6 +1,13 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
+import {
+  createHyperSubLayers,
+  app,
+  open,
+  rectangle,
+  shell,
+  getColemakKey,
+} from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -65,14 +72,19 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       1: app("1Password"),
-      c: app("Cursor"),
+      c: app("Windsurf"),
       s: app("Slack"),
       t: app("Warp"),
       z: app("zoom.us"),
       f: app("Finder"),
-      p: app("Spotify"),
-      a: app("Arc"),
+      m: app("Spotify"),
+      b: app("Arc"),
+      n: app("Obsidian"),
     },
+
+    h: open(
+      "raycast://extensions/raycast/system/hide-all-apps-except-frontmost"
+    ),
 
     // TODO: This doesn't quite work yet.
     // l = "Layouts" via Raycast's custom window management
