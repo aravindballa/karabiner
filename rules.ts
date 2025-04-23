@@ -1,13 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import {
-  createHyperSubLayers,
-  app,
-  open,
-  rectangle,
-  shell,
-  getColemakKey,
-} from "./utils";
+import { createHyperSubLayers, app, open } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
